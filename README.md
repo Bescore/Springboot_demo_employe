@@ -1,5 +1,5 @@
 # Springboot_demo_employe
-Ceci est un exercice de mise en bouche en Springboot.
+Ceci est un exercice de mise en bouche en Springboot 'sans relations'.
 
 - les modules nécessaires et utilisés pour le projet :
 
