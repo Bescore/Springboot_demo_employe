@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>home</title>
+</head>
+<div th:replace="fragments/header::header"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<form method="post" th:object="${employe}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nom</label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" th:field="*{nom}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Prenom</label>
+    <input type="text" class="form-control" th:field="*{prenom}" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Email</label>
+    <input type="text" class="form-control" th:field="*{email}" >
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Fonction</label>
+    <input type="text" class="form-control" th:field="*{fonction}" >
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<hr>
+</div>

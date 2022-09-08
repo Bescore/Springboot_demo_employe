@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>home</title>
+</head>
+<div th:replace="fragments/header::header"></div>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<form method="post"  th:object="${employe}">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Nom</label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" th:field="*{nom}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Prenom</label>
+    <input type="text" class="form-control" th:field="*{prenom}" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Email</label>
+    <input type="text" class="form-control" th:field="*{email}" >
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Fonction</label>
+    <input type="text" class="form-control" th:field="*{fonction}" >
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<hr>
+<table class="table caption-top">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fonction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="employe:${employes}">
+      <td th:text="${employe.id}"></td>
+      <td th:text="${employe.nom}"></td>
+      <td th:text="${employe.prenom}"></td>
+      <td th:text="${employe.email}"></td>
+      <td th:text="${employe.fonction}"></td>
+      <td> <a th:href="@{'/show/'+${employe.id}}">modifier</a></td>
+        <td> <a th:href="@{'/delete/'+${employe.id}}">effacer</a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
