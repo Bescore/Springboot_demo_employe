@@ -13,3 +13,5 @@ Ceci est un exercice de mise en bouche en Springboot 'sans relations'.
 
 Un CRUD complet  en Springboot , La gestion d'employés, avec une liste de noms, prénoms , emails, et leurs fonctions.
 
+Vous devez ouvrir le projet avec springboot, et demarrer un serveur local pour gerer la partie Base de donnée.
+
